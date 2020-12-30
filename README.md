@@ -15,8 +15,10 @@ This is where machine learning can help! We can train a Machine learning model t
 If this project interests you feel free to shoot me an email via aacjpw@gmail.com
 
 ## Obtaining and Cleaning Data
+Utimatley the dataset is a collection of 1,000 real Wikepedia articles and 1,000 AI generated articles. In Order to generate the articles I trained OpenAI's GPT2 on the set of real articles which were obtained by scraping Wikipedia with the BeautifulSoup library. I also had to remove many unknown character tags in order for the data to be "ML friendly".
 
 ## Generative Model
+As mentioned earlier, I generated the fake articles with GPT2, a massive pre-trained neural network with a state of the art transformer architecture, to be more specific I used the 355M parameter version as the smaller 117M is best for datasets under 10MB. This process was fairly simple as the model was already built for me, however I did have to downgrade to tensorflow 1.15 because GPT2 is dependant on the tf.contrib module which dosen't exist in tensorflow 2. I also had to upgrade to colabs pro in order to have enough ram to train the model and generate all the text.
 
 ## Classification Model
 
