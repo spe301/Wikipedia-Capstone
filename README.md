@@ -27,7 +27,7 @@ I used GPT2 to generate 180 Wikipedia articles and put them into a dataframe. Ne
 As mentioned earlier, I generated the fake articles with GPT2, a massive pre-trained neural network with a state of the art transformer architecture, to be more specific I used the 355M parameter version as the smaller 117M is best for datasets under 10MB. This process was fairly simple as the model was already built for me, however I did have to downgrade to tensorflow 1.15 because GPT2 is dependant on the tf.contrib module which dosen't exist in tensorflow 2. I also had to upgrade to colabs pro in order to have enough ram to train the model and generate all the text.
 
 ## Classification Model
-1. I ran a gridsearch on GRUs
+1. I ran a gridsearch on GRUs and LSTM's
 2. I ran a gridsearch on Bidirectional LSTMs and GRUs
 
 ## Bringing it to life with StreamLit
