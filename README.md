@@ -31,6 +31,7 @@ As mentioned earlier, I generated the fake articles with GPT2, a massive pre-tra
 2. I ran a gridsearch on Bidirectional LSTMs and GRUs
 
 ## Bringing it to life with Flask and Heroku
+<img src="Images/download.png/">
 I used Flask and Heroku to make a public demo out of this model, In order to build the app I had to go through a 6 step process.
 
 1. save model and download it
