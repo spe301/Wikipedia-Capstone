@@ -30,4 +30,12 @@ As mentioned earlier, I generated the fake articles with GPT2, a massive pre-tra
 1. I ran a gridsearch on GRUs and LSTM's
 2. I ran a gridsearch on Bidirectional LSTMs and GRUs
 
-## Bringing it to life with StreamLit
+## Bringing it to life with Flask and Heroku
+I used Flask and Heroku to make a public demo out of this model, In order to build the app I had to go through a 6 step process.
+
+1. save model and download it
+2. create an html template for the app
+3. write app script with Flask
+4. write in dependancies to requitements.txt, Flask, Jinjin2, gunicorn, and Tensorflow
+5. write a procfile to declare which commands to run
+6. connect repository to Heroku
