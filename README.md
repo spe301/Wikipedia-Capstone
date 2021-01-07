@@ -42,3 +42,6 @@ I used Flask and Heroku to make a public demo out of this model, In order to bui
 4. write in dependancies to requitements.txt, Flask, Jinjin2, gunicorn, and Tensorflow
 5. write a procfile to declare which commands to run
 6. connect repository to Heroku
+
+## Future Works
+A great follow up to this project would be to train the classifier on more data, most likley through the cloud
