@@ -3,6 +3,7 @@
 
 ## Overview
 
+<img src="Images/world.jpg/">
 Wikipedia, as the name implies, is the Encyclopedia of the 21st century! It is an amazing place full of free information maintained by a community of volunteer editors. It has assisted in the removal of barriers when it comes to giving and receiving knowledge. Unfortunately, with this great democratization comes the potential spread of misinformation and plagiarized content. With the rise of complex transformer models such as GPT2, AI can generate persuasive content that is practically identical to human written text.
 See what I mean!: https://techcrunch.com/2019/02/17/openai-text-generator-dangerous/
 This is where machine learning can help! We can train a Machine learning model to classify whether or not a body of text has been written by a human or an AI and use other NLP strategies to catch plagiarism. If this seems like a problem you care about then keep reading!
@@ -39,6 +40,16 @@ I used Flask and Heroku to make a public demo out of this model, In order to bui
 6. connect repository to Heroku
 
 view here to demo: https://ai-written-text-api.herokuapp.com/
+
+## EDA
+With this being a Deep NLP problem there wasn't much need for eda, However I made a word cloud that represents frequently used words to compare the AI generated articles to the real ones.
+AI generated(above)...
+<img src="Images/AI.png/">
+
+Real Articles(above)...
+<img src="Images/Human.png/">
+
+I will also make note that the AI generated articles are 0.44% stopwords while the real ones are 0.39%.
 
 ## Future Works
 A great follow up to this project would be to train the classifier on more data, most likley through the cloud
