@@ -1,3 +1,5 @@
 *.ipynb
+*.pdf
+*.sh
 /Data
 /Images
