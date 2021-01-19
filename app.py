@@ -1,18 +1,18 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-import keras
+from tensorflow.keras import preprocessing, models
 
 def ModelReadyString(text_str, pad):
     '''converts an individual unit of text into tokenized sequences'''
     text = [text_str]
-    t = keras.preprocessing.text.Tokenizer()
+    t = preprocessing.text.Tokenizer()
     t.fit_on_texts(text)
     tokens = t.texts_to_sequences(text)
-    tokens2 = keras.preprocessing.sequence.pad_sequences(tokens, maxlen=pad)
+    tokens2 = preprocessing.sequence.pad_sequences(tokens, maxlen=pad)
     return tokens2
 
 app = Flask(__name__)
-model = keras.models.load_model('BidFinal.h5')
+model = models.load_model('BidFinal.h5')
 
 @app.route('/')
 def home():
