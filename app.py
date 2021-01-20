@@ -1,6 +1,6 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-from keras import preprocessing, models
+from tensorflow.keras import preprocessing, models
 
 def ModelReadyString(text_str, pad):
     '''converts an individual unit of text into tokenized sequences'''
