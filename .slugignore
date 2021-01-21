@@ -3,5 +3,4 @@
 *.sh
 *.md
 /Data
-/Images
 Procfile.windows.txt
