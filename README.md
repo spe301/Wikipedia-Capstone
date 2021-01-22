@@ -25,10 +25,10 @@ As mentioned earlier, I generated the fake articles with GPT2, a massive pre-tra
 ## EDA
 With this being a Deep NLP problem there wasn't much need for eda, However I made a word cloud that represents frequently used words to compare the AI generated articles to the real ones.
 AI generated(above)...
-<img src="Images/AI.png/">
+<img src="Images/fake.png/">
 
 Real Articles(above)...
-<img src="Images/Human.png/">
+<img src="Images/real.png/">
 
 I will also make note that the AI generated articles are 0.44% stopwords while the real ones are 0.39%.
 
