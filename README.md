@@ -36,7 +36,7 @@ I will also make note that the AI generated articles are 0.44% stopwords while t
 1. I ran a gridsearch on GRUs and LSTM's
 2. I ran a gridsearch on Bidirectional LSTMs and GRUs
 3. Utimatley, a Bidirectional LSTM with 64 nodes and a tanh activation function did the best
-<img src="Images/cm.png/">
+<img src="Images/download.png/">
 
 ## Reccomendations / Conculsions
 These are some ways an AI written text classifier can be used
