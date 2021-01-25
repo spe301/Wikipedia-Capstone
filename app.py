@@ -12,7 +12,7 @@ def ModelReadyString(text_str, pad):
     return tokens2
 
 app = Flask(__name__)
-model = models.load_model('BidFinal.h5')
+model = models.load_model('model2.h5')
 
 @app.route('/')
 def home():
