@@ -39,11 +39,8 @@ def home():
 def predict():
     user_input = request.form['Text']
     if len(user_input) < 56:
-        try:
-            text = GetText(user_input) 
-            tokenized = ModelReadyString(text, 1720)
-        except:
-            return "User input must have at least 56 characters if it's not a url"
+        text = GetText(user_input) 
+        tokenized = ModelReadyString(text, 1720)
     else:
         tokenized = ModelReadyString(user_input, 1720)
     prediction = model.predict(tokenized)
