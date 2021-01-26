@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify, render_template
 from tensorflow.keras import preprocessing, models
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
+import re
 
 def ModelReadyString(text_str, pad):
     '''converts an individual unit of text into tokenized sequences'''
@@ -15,7 +16,7 @@ def ModelReadyString(text_str, pad):
 
 def GetText(url):
    '''Scrapes a wikikedia article'''
-   source = urllib.request.urlopen(url).read()
+   source = urlopen(url).read()
    soup = BeautifulSoup(source, 'lxml')
    text = soup.findAll('p')
    article = ''
