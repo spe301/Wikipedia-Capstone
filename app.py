@@ -1,6 +1,8 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 from tensorflow.keras import preprocessing, models
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
 
 def ModelReadyString(text_str, pad):
     '''converts an individual unit of text into tokenized sequences'''
@@ -11,6 +13,20 @@ def ModelReadyString(text_str, pad):
     tokens2 = preprocessing.sequence.pad_sequences(tokens, maxlen=pad)
     return tokens2
 
+def GetText(url):
+   '''Scrapes a wikikedia article'''
+   source = urllib.request.urlopen(url).read()
+   soup = BeautifulSoup(source, 'lxml')
+   text = soup.findAll('p')
+   article = ''
+   for i in range(len(text)):
+       segment = text[i].text
+       article += segment.replace('\n', '').replace('\'', '').replace(')', '')
+       article = article.lower()
+       clean = re.sub("([\(\[]).*?([\)\]])", '', article)
+       clean2 = re.sub(r'\[(^)*\]', '', clean)
+   return clean
+
 app = Flask(__name__)
 model = models.load_model('model2.h5')
 
@@ -20,7 +36,15 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    tokenized = ModelReadyString(request.form['Text'], 1640)
+	user_input = request.form['Text']
+	if len(user_input) < 56:
+		try:
+			text = GetText(user_input) 
+			tokenized = ModelReadyString(text, 1720)
+		except:
+			return "User input must have at least 56 characters if it's not a url"
+	else:
+    	tokenized = ModelReadyString(user_input, 1720)
     prediction = model.predict(tokenized)
     output = round(prediction[0][1]*100, 2)
     return render_template('index.html', prediction_text='We predict a {}% probability that an AI wrote this.'.format(output))
