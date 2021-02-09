@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html >
-<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
   <title>Wikipedia Protection NLP</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-  
-</head>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'> 
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+* {
+  box-sizing: border-box;
+}
 
-<body>
+.column {
+  float: left;
+  width: 50.00%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body style="background-color:powderblue;">
 
  <div class="login">
         <h1 style="color: orange;">AI Blog Classifier</h1>
-        <div style="margin-left:10%; margin-right:10%;">
-        <img width="66" height="66", src="https://raw.githubusercontent.com/spe301/Wikipedia-Capstone/main/Images/logoo.png">
+        <div style="margin-left:10%; margin-right:10%;",  outline-color: powderblue;>
+        <img width="150" height="150", src="https://raw.githubusercontent.com/spe301/Wikipedia-Capstone/main/Images/logoo.png">
         </div>
 	<h2 style="color: blue;">Flag AI generated blogs and essays</h2>
 	<h2 style="color: blue;">paste in any article or essay, or Wikipedia url</h2>
@@ -32,8 +52,17 @@
    <br>
    {{ prediction_text }}
 
- </div>
-
+<div class="row">
+  <div class="column">
+  <h1 style="color: purple;">Top 50 words from real articles</h1>
+    <img src="https://raw.githubusercontent.com/spe301/Wikipedia-Capstone/main/Images/real.png" alt="Forest" style="width:100%">
+  </div>
+  <div class="column">
+  <h1 style="color: purple;">Top 50 words from AI articles</h1>
+    <img src="https://raw.githubusercontent.com/spe301/Wikipedia-Capstone/main/Images/real.png" alt="Mountains" style="width:100%">
+  </div>
+</div>
 
 </body>
 </html>
+
