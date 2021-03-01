@@ -33,9 +33,7 @@ Real Articles(above)...
 I will also make note that the AI generated articles are 0.44% stopwords while the real ones are 0.39%.
 
 ## Classification Model
-1. I ran a gridsearch on GRUs and LSTM's
-2. I ran a gridsearch on Bidirectional LSTMs and GRUs
-3. Utimatley, a Bidirectional LSTM with 64 nodes and a tanh activation function did the best
+After trying a wide variety of deep neural networks and sklearn classifiers, I got the best results (98.5% validation accuracy) with a hypertuned AdaBoostClassifier. However I decided to use a Feed-Forward  with dropout and L1 regularization with only 91% validation accuracy in the app deployment. The reason for this decision is becase I am working to increase the data signifigantly and when I do deep learning is very likley to be nessecary and then the app will already be set up for it.
 <img src="Images/download.png/">
 
 ## Reccomendations / Conculsions
@@ -44,4 +42,4 @@ These are some ways an AI written text classifier can be used
 2. News companies can use this to verify that the news stories that come in really came from their reporters instead of a bot.
 
 ## Future Works
-A great follow up to this project would be to do the project through the cloud, this way I could generate more articles and in turn train the model on more data to yield better performance
+I working to expand the dataset to 20,000 articles and then repeat this process. I am also considering scaling it even higher, possibly doing so in the cloud.
