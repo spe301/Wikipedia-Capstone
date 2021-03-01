@@ -34,7 +34,7 @@ I will also make note that the AI generated articles are 0.44% stopwords while t
 
 ## Classification Model
 After trying a wide variety of deep neural networks and sklearn classifiers, I got the best results (98.5% validation accuracy) with a hypertuned AdaBoostClassifier. However I decided to use a Feed-Forward  with dropout and L1 regularization with only 91% validation accuracy in the app deployment. The reason for this decision is becase I am working to increase the data signifigantly and when I do deep learning is very likley to be nessecary and then the app will already be set up for it.
-<img src="Images/download.png/">
+<img src="Images/downloaded.png/">
 
 ## Reccomendations / Conculsions
 These are some ways an AI written text classifier can be used
