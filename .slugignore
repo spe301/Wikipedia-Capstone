@@ -2,6 +2,6 @@
 *.pdf
 *.sh
 *.md
-*.h5
+*.pkl
 /Data
 Procfile.windows.txt
