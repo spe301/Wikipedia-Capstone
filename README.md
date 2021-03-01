@@ -16,7 +16,7 @@ If this project interests you feel free to shoot me an email via aacjpw@gmail.co
 I used the BeautifulSoup library to scrape 1,000 Wikepedia articles and cleaned out all of the breaklines and unknown character tags. I then trained GPT2 on the articles.
 
 # Text Classifier
-I used GPT2 to generate 180 Wikipedia articles and put them into a dataframe. Next, I put the scraped articles in a seperate dataframe, and selected a random sample of 180 articles and merging them with the generated articles to create a dataset of 360 articles. The dataset is so small because the sequences are very long and we would run into rescource issues.
+I used GPT2 to generate 1000 Wikipedia articles and put them into a dataframe. Next, I put the scraped articles in a seperate dataframe, and merged the dataframes to create a dataset of 2000 articles. I used this as training data for a model that could classify the real articles from the AI generated ones.
 
 
 ## Generative Model
