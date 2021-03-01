@@ -4,6 +4,7 @@ from tensorflow.keras import preprocessing, models
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import re
+import joblib
 
 def ModelReadyString(text_str, pad):
     '''converts an individual unit of text into tokenized sequences'''
@@ -29,7 +30,7 @@ def GetText(url):
    return clean
 
 app = Flask(__name__)
-model = models.load_model('model2.h5')
+model = joblib.load('clf.pkl')
 
 @app.route('/')
 def home():
@@ -40,10 +41,10 @@ def predict():
     user_input = request.form['Text']
     if len(user_input) < 56:
         text = GetText(user_input) 
-        tokenized = ModelReadyString(text, 1720)
+        tokenized = ModelReadyString(text, 1722)
     else:
-        tokenized = ModelReadyString(user_input, 1720)
-    prediction = model.predict(tokenized)
+        tokenized = ModelReadyString(user_input, 1722)
+    prediction = model.predict_proba(tokenized)
     output = round(prediction[0][1]*100, 2)
     return render_template('index.html', prediction_text='We predict a {}% probability that an AI wrote this.'.format(output))
 
