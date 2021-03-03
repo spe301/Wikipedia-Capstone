@@ -16,7 +16,7 @@ If this project interests you feel free to shoot me an email via aacjpw@gmail.co
 I used the BeautifulSoup library to scrape 1,000 Wikepedia articles and cleaned out all of the breaklines and unknown character tags. I then trained GPT2 on the articles.
 
 # Text Classifier
-I used GPT2 to generate 180 Wikipedia articles and put them into a dataframe. Next, I put the scraped articles in a seperate dataframe, and selected a random sample of 180 articles and merging them with the generated articles to create a dataset of 360 articles. The dataset is so small because the sequences are very long and we would run into rescource issues.
+I used GPT2 to generate 1000 Wikipedia articles and put them into a dataframe. Next, I put the scraped articles in a seperate dataframe, and merged the dataframes to create a dataset of 2000 articles. I used this as training data for a model that could classify the real articles from the AI generated ones.
 
 
 ## Generative Model
@@ -33,10 +33,8 @@ Real Articles(above)...
 I will also make note that the AI generated articles are 0.44% stopwords while the real ones are 0.39%.
 
 ## Classification Model
-1. I ran a gridsearch on GRUs and LSTM's
-2. I ran a gridsearch on Bidirectional LSTMs and GRUs
-3. Utimatley, a Bidirectional LSTM with 64 nodes and a tanh activation function did the best
-<img src="Images/download.png/">
+After trying a wide variety of deep neural networks and sklearn classifiers, I got the best results (98.5% validation accuracy) with a hypertuned AdaBoostClassifier. However I decided to use a Feed-Forward  with dropout and L1 regularization with only 91% validation accuracy in the app deployment. The reason for this decision is becase I am working to increase the data signifigantly and when I do deep learning is very likley to be nessecary and then the app will already be set up for it.
+<img src="Images/downloaded.png/">
 
 ## Reccomendations / Conculsions
 These are some ways an AI written text classifier can be used
@@ -44,4 +42,4 @@ These are some ways an AI written text classifier can be used
 2. News companies can use this to verify that the news stories that come in really came from their reporters instead of a bot.
 
 ## Future Works
-A great follow up to this project would be to do the project through the cloud, this way I could generate more articles and in turn train the model on more data to yield better performance
+I working to expand the dataset to 20,000 articles and then repeat this process. I am also considering scaling it even higher, possibly doing so in the cloud.
